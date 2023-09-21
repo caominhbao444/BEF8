@@ -7,7 +7,11 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(morgan("combined"));
+//Help to read request body
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// app.use(morgan("combined"));
 
 app.engine(
   "hbs",
@@ -23,6 +27,13 @@ app.get("/", function (req, res) {
 });
 app.get("/news", function (req, res) {
   res.render("new");
+});
+app.get("/search", function (req, res) {
+  res.render("search");
+});
+app.post("/search", function (req, res) {
+  console.log(req.body);
+  res.render("search");
 });
 app.listen(port, () =>
   console.log(`App listening at http://localhost:${port}`)
