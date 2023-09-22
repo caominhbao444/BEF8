@@ -2,6 +2,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const exphbs = require("express-handlebars");
+const route = require("./routes/index");
 const app = express();
 const port = 3000;
 
@@ -22,19 +23,8 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources/views"));
 
-app.get("/", function (req, res) {
-  res.render("home");
-});
-app.get("/news", function (req, res) {
-  res.render("new");
-});
-app.get("/search", function (req, res) {
-  res.render("search");
-});
-app.post("/search", function (req, res) {
-  console.log(req.body);
-  res.render("search");
-});
+route(app);
+
 app.listen(port, () =>
   console.log(`App listening at http://localhost:${port}`)
 );
