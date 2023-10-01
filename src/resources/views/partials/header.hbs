@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar scroll</a>
+    <a class="navbar-brand" href="/">F8</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -14,15 +14,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul
-        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+        class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
         style="--bs-scroll-height: 100px;"
       >
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/courses/create">Tạo khóa học</a>
-        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -31,20 +25,20 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            Link
+            Minh Bao
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <a class="nav-link" href="/courses/create">Tạo khóa học</a>
             <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <a class="nav-link" href="/me/stored/courses">Danh sách khóa học</a>
+
           </ul>
         </li>
-        <li class="nav-item">
+        {{! <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Link</a>
-        </li>
+        </li>  }}
       </ul>
-      <form class="d-flex" role="search">
+      {{! <form class="d-flex" role="search">
         <input
           class="form-control me-2"
           type="search"
@@ -52,7 +46,7 @@
           aria-label="Search"
         />
         <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </form> }}
     </div>
   </div>
 </nav>

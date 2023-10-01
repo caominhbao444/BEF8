@@ -10,8 +10,6 @@ const Course = new Schema(
     description: { type: String },
     image: String,
     slug: { type: String, slug: "name", unique: true },
-    createdAt: { type: Date, default: Date.now() },
-    updatedAt: { type: Date, default: Date.now() },
   },
   {
     timestamps: true,
